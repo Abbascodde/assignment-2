@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    let acctBalance = 2000;
+
+    function checkBalance()
+    {
+      alert(`Your total Balance is #${acctBalance}` )
+    }
+   
+    function withdraw (balance) 
+    {
+      if (balance <= acctBalance) {
+        acctBalance -=balance;
+        alert(`#${balance} Your Balance is #${acctBalance}`)
+      }
+      else{
+        alert(`Please select the right option`)
+      }
+    }
+
+    function deposit (balance) 
+    {
+      acctBalance += balance;
+      alert(`Your new balance is #${acctBalance}`);
+    }
+
+    while (true)
+    {
+      let click = parseInt(prompt(`Welcome to UBA 
+      Choose options bellow\n1.Check Balance \n 2.withdraw \n 3.Deposit \n 4.Exit .`))
+      switch (click) 
+      {
+        // First Case
+        case 1:
+        checkBalance();
+        break;
+    //  second Case
+        case 2: 
+      
+      let moneyWithdraw = parseFloat(prompt(`Enter your desire amount to withdraw:` ));
+      withdraw(moneyWithdraw);
+      break;
+      // Third Case
+      case 3:
+    
+        let amountDeposit = parseFloat(prompt(`Enter your desire amount to Deposit:`))
+        deposit (amountDeposit);
+        break;
+        // Fourth Case
+        case 4:
+          alert (`Thank you for choosing UBA`)
+    }
+     if (click ===4)
+     break;
+  }
+  </script>
+</body>
+</html>
